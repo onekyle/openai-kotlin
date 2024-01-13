@@ -1,0 +1,33 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:////PointingToDeclaration/openai-core/[root]/index.html
+$dokka.location:/Quality.Companion///PointingToDeclaration/openai-core/[root]/-quality/-companion/index.html
+$dokka.location:/Quality.Companion/HD/#/PointingToDeclaration/openai-core/[root]/-quality/-companion/-h-d.html
+$dokka.location:/Quality///PointingToDeclaration/openai-core/[root]/-quality/index.html
+$dokka.location:/Quality/Quality/#kotlin.String/PointingToDeclaration/openai-core/[root]/-quality/-quality.html
+$dokka.location:/Quality/value/#/PointingToDeclaration/openai-core/[root]/-quality/value.html
+module:openai-client
+com.aallam.openai.client
+com.aallam.openai.client.extension
+module:openai-core
+com.aallam.openai.api
+com.aallam.openai.api.assistant
+com.aallam.openai.api.audio
+com.aallam.openai.api.chat
+com.aallam.openai.api.completion
+com.aallam.openai.api.core
+com.aallam.openai.api.edits
+com.aallam.openai.api.embedding
+com.aallam.openai.api.exception
+com.aallam.openai.api.file
+com.aallam.openai.api.finetune
+com.aallam.openai.api.finetuning
+com.aallam.openai.api.http
+com.aallam.openai.api.image
+com.aallam.openai.api.image.internal
+com.aallam.openai.api.logging
+com.aallam.openai.api.message
+com.aallam.openai.api.model
+com.aallam.openai.api.moderation
+com.aallam.openai.api.run
+com.aallam.openai.api.thread
