@@ -168,13 +168,15 @@ public class ChatCompletionRequestBuilder {
      * The messages to generate chat completions for.
      */
     public var messages: List<ChatMessage>? = null
-
     /**
      * What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random,
      * while lower values like 0.2 will make it more focused and deterministic.
      *
      * We generally recommend altering this or [topP] but not both.
      */
+
+    public var character_profile: Map<String, String>? = null
+
     public var temperature: Double? = null
 
     /**

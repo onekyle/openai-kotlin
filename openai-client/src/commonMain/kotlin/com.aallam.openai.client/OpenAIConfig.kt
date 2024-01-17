@@ -97,7 +97,9 @@ public class OpenAIHost(
         /**
          * A pre-configured instance of [OpenAIHost] with the base URL set as `https://api.openai.com/v1/`.
          */
-        public val OpenAI: OpenAIHost = OpenAIHost(baseUrl = "https://api.openai.com/v1/")
+        public val OpenAI: OpenAIHost = OpenAIHost(baseUrl = "https://api.baichuan-ai.com/v1/")
+
+        public val BaiChuan: OpenAIHost = OpenAIHost(baseUrl = "https://api.baichuan-ai.com/")
 
         /**
          * Creates an instance of [OpenAIHost] configured for Azure hosting with the given resource name, deployment ID,
