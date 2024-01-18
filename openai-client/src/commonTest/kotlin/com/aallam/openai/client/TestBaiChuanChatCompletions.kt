@@ -1,5 +1,6 @@
 package com.aallam.openai.client
 
+import com.aallam.openai.api.baichuan.BCCharacter
 import com.aallam.openai.api.chat.*
 import com.aallam.openai.api.model.ModelId
 import kotlinx.coroutines.flow.launchIn
@@ -14,22 +15,23 @@ class TestBaiChuanChatCompletions : TestOpenAI() {
     fun chatCompletions() = test {
         val request = chatCompletionRequest {
             model = ModelId("Baichuan-NPC-Turbo")
+            characterProfile = BCCharacter.character(id = 20306)
             messages {
                 message {
-                    role = ChatRole.System
-                    content = "You are a helpful assistant.!"
+                    role = ChatRole.Assistant
+                    content = "呵, 你来了~"
                 }
                 message {
                     role = ChatRole.User
-                    content = "Who won the world series in 2020?"
+                    content = "你好呀"
                 }
                 message {
                     role = ChatRole.Assistant
-                    content = "The Los Angeles Dodgers won the World Series in 2020."
+                    content = "我很好"
                 }
                 message {
                     role = ChatRole.User
-                    content = "Where was it played?"
+                    content = "想我没?"
                 }
             }
         }

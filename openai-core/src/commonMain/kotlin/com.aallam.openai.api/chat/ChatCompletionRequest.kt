@@ -4,6 +4,7 @@ package com.aallam.openai.api.chat
 
 import com.aallam.openai.api.BetaOpenAI
 import com.aallam.openai.api.OpenAIDsl
+import com.aallam.openai.api.baichuan.BCCharacter
 import com.aallam.openai.api.core.Parameters
 import com.aallam.openai.api.model.ModelId
 import kotlinx.serialization.SerialName
@@ -24,6 +25,8 @@ public class ChatCompletionRequest(
      * The messages to generate chat completions for.
      */
     @SerialName("messages") public val messages: List<ChatMessage>,
+
+    @SerialName("character_profile") public val characterProfile: BCCharacter? = null,
 
     /**
      * What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random,
@@ -174,8 +177,7 @@ public class ChatCompletionRequestBuilder {
      *
      * We generally recommend altering this or [topP] but not both.
      */
-
-    public var character_profile: Map<String, String>? = null
+    public var characterProfile: BCCharacter? = null
 
     public var temperature: Double? = null
 
@@ -312,6 +314,7 @@ public class ChatCompletionRequestBuilder {
     public fun build(): ChatCompletionRequest = ChatCompletionRequest(
         model = requireNotNull(model) { "model is required" },
         messages = requireNotNull(messages) { "messages is required" },
+        characterProfile = characterProfile,
         temperature = temperature,
         topP = topP,
         n = n,
