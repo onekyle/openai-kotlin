@@ -33,6 +33,9 @@ fun KotlinMultiplatformExtension.native() {
             watchosX64(),
             watchosSimulatorArm64(),
         ).forEach { target ->
+            target.binaries.all {
+                linkerOpts += "-ld64"
+            }
             getByName("${target.name}Main").dependsOn(darwinMain)
             getByName("${target.name}Test").dependsOn(darwinTest)
         }
