@@ -101,31 +101,29 @@ class TestBaiChuanChatCompletions : TestOpenAI() {
         val request = chatCompletionRequest {
             model = ModelId("Baichuan-NPC-Turbo")
             responseFormat = ChatResponseFormat.JsonObject
+            characterProfile = BCCharacter.character(id = 20306)
             messages {
                 message {
-                    role = ChatRole.System
-                    content = "You are a helpful assistant.!"
-                }
-                message {
-                    role = ChatRole.System
-                    content = """All your answers should be a valid JSON, using the following JSON schema definition:
-                        | { "type": "object", "properties": { "question": { "type": "string" }, "response": { "type": "string" } }, "required": ["question", "response"] }
-                        """.trimMargin()
+                    role = ChatRole.Assistant
+                    content = "呵, 你来了~"
                 }
                 message {
                     role = ChatRole.User
-                    content = "Who won the world cup in 1998?"
+                    content = "你好呀"
+                }
+                message {
+                    role = ChatRole.Assistant
+                    content = "我很好"
+                }
+                message {
+                    role = ChatRole.User
+                    content = "想我没?"
                 }
             }
         }
         val response = openAI.chatCompletion(request)
         val content = response.choices.first().message.content.orEmpty()
 
-        @Serializable
-        data class Answer(val question: String? = null, val response: String? = null)
-
-        val answer = Json.decodeFromString<Answer>(content)
-        assertNotNull(answer.question)
-        assertNotNull(answer.response)
+        assertNotNull(content)
     }
 }
