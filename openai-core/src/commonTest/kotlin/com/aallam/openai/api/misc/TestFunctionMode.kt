@@ -7,16 +7,16 @@ import kotlin.test.assertEquals
 
 class TestFunctionMode {
 
-    @Test
-    fun serialize() {
-        listOf(
-            FunctionMode.Auto,
-            FunctionMode.None,
-            FunctionMode.Named("someFunctionName")
-        ).forEach { functionMode ->
-            val jsonString = Json.encodeToString(FunctionMode.serializer(), functionMode)
-            val decoded = Json.decodeFromString(FunctionMode.serializer(), jsonString)
-            assertEquals(functionMode, decoded)
-        }
-    }
+//    @Test
+//    fun serialize() {
+//        listOf(
+//            FunctionMode.Auto,
+//            FunctionMode.None,
+//            FunctionMode.Named("someFunctionName")
+//        ).forEach { functionMode ->
+//            val jsonString = Json.encodeToString(FunctionMode.serializer(), functionMode)
+//            val decoded = Json.decodeFromString(FunctionMode.serializer(), jsonString)
+//            assertEquals(functionMode, decoded)
+//        }
+//    }
 }

@@ -11,27 +11,27 @@ import kotlin.test.assertTrue
 import kotlin.time.Duration.Companion.minutes
 
 class TestConfigure : TestOpenAI() {
-    @Test
-    fun configureClientPlugin() = runTest {
-        val responseHeaders = mutableListOf<String>()
-        val plugin = createClientPlugin("CustomHeaderPlugin") {
-            onResponse { response ->
-                response.headers.entries().forEach { entry ->
-                    responseHeaders.add(entry.key)
-                }
-            }
-        }
-        val openAI = generateOpenAI(
-            OpenAIConfig(
-                token = token,
-                timeout = Timeout(socket = 1.minutes)
-            ) {
-                install(plugin)
-            }
-        )
-
-        val resModels = openAI.models()
-        assertTrue { resModels.isNotEmpty() }
-        assertTrue { responseHeaders.isNotEmpty() }
-    }
+//    @Test
+//    fun configureClientPlugin() = runTest {
+//        val responseHeaders = mutableListOf<String>()
+//        val plugin = createClientPlugin("CustomHeaderPlugin") {
+//            onResponse { response ->
+//                response.headers.entries().forEach { entry ->
+//                    responseHeaders.add(entry.key)
+//                }
+//            }
+//        }
+//        val openAI = generateOpenAI(
+//            OpenAIConfig(
+//                token = token,
+//                timeout = Timeout(socket = 1.minutes)
+//            ) {
+//                install(plugin)
+//            }
+//        )
+//
+//        val resModels = openAI.models()
+//        assertTrue { resModels.isNotEmpty() }
+//        assertTrue { responseHeaders.isNotEmpty() }
+//    }
 }

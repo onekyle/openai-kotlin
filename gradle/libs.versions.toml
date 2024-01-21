@@ -1,5 +1,6 @@
 [versions]
-kotlin = "1.9.0"
+agp = "8.2.1"
+kotlin = "1.9.20"
 coroutines = "1.7.2"
 serialization = "1.5.1"
 ktor = "2.3.2"
@@ -45,3 +46,7 @@ kotlinx-binary-validator = { id = "org.jetbrains.kotlinx.binary-compatibility-va
 maven-publish = { id = "com.vanniktech.maven.publish", version = "0.25.3" }
 spotless = { id = "com.diffplug.gradle.spotless", version = "6.20.0" }
 dokka = { id = "org.jetbrains.dokka", version = "1.8.20" }
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }

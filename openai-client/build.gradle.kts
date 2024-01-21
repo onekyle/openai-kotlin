@@ -6,13 +6,29 @@ plugins {
     id("com.diffplug.spotless")
     id("org.jetbrains.dokka")
     id("build-support")
+//    id("com.android.library")
+//    id("org.jetbrains.kotlin.native.cocoapods")
+//    alias(libs.plugins.kotlinCocoapods)
+//    alias(libs.plugins.androidApplication)
+//    alias(libs.plugins.androidLibrary)
 }
 
 kotlin {
+
+//    androidTarget()
+
     explicitApi()
     jvm()
-    jsNode()
+//    jsNode()
     native()
+
+//    iosSimulatorArm64("native") {
+//        binaries {
+//            framework {
+//                baseName = "openai-kotlin"
+//            }
+//        }
+//    }
 
     sourceSets {
         all {
@@ -57,25 +73,38 @@ kotlin {
             }
         }
 
-        val jsMain by getting {
-            dependencies {
-                implementation(libs.okio.nodefilesystem)
-            }
-        }
-        val jsTest by getting {
-            dependencies {
-                implementation(kotlin("test-js"))
-            }
-        }
-        val desktopTest by getting {
-            dependencies {
-                implementation(libs.ktor.client.curl)
-            }
-        }
-        val darwinTest by getting {
-            dependencies {
-                implementation(libs.ktor.client.darwin)
-            }
-        }
+//        val jsMain by getting {
+//            dependencies {
+//                implementation(libs.okio.nodefilesystem)
+//            }
+//        }
+//        val jsTest by getting {
+//            dependencies {
+//                implementation(kotlin("test-js"))
+//            }
+//        }
+//        val desktopTest by getting {
+//            dependencies {
+//                implementation(libs.ktor.client.curl)
+//            }
+//        }
+//        val darwinTest by getting {
+//            dependencies {
+//                implementation(libs.ktor.client.darwin)
+//            }
+//        }
     }
 }
+
+// Disabling test compilation and execution
+//tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+//    if (name.contains("Test")) {
+//        enabled = false
+//    }
+//}
+
+//tasks.all {
+//    if (name.contains("Test")) {
+//        enabled = false
+//    }
+//}

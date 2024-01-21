@@ -8,30 +8,31 @@ fun KotlinMultiplatformExtension.native() {
         val nativeMain by creating { dependsOn(getByName("commonMain")) }
         val nativeTest by creating { dependsOn(getByName("commonTest")) }
 
-        // Desktop targets
-        val desktopMain by creating { dependsOn(nativeMain) }
-        val desktopTest by creating { dependsOn(nativeTest) }
-        listOf(linuxX64(), mingwX64()).forEach { target ->
-            getByName("${target.name}Main").dependsOn(desktopMain)
-            getByName("${target.name}Test").dependsOn(desktopTest)
-        }
+//         Desktop targets
+//        val desktopMain by creating { dependsOn(nativeMain) }
+//        val desktopTest by creating { dependsOn(nativeTest) }
+//        listOf(linuxX64(), mingwX64()).forEach { target ->
+//            getByName("${target.name}Main").dependsOn(desktopMain)
+//            getByName("${target.name}Test").dependsOn(desktopTest)
+//        }
 
         // Darwin targets
         val darwinMain by creating { dependsOn(nativeMain) }
         val darwinTest by creating { dependsOn(nativeTest) }
+
         listOf(
-            iosX64(),
+//            iosX64(),
             iosArm64(),
             iosSimulatorArm64(),
-            macosX64(),
-            macosArm64(),
-            tvosX64(),
-            tvosArm64(),
-            tvosSimulatorArm64(),
-            watchosArm32(),
-            watchosArm64(),
-            watchosX64(),
-            watchosSimulatorArm64(),
+//            macosX64(),
+//            macosArm64(),
+//            tvosX64(),
+//            tvosArm64(),
+//            tvosSimulatorArm64(),
+//            watchosArm32(),
+//            watchosArm64(),
+//            watchosX64(),
+//            watchosSimulatorArm64(),
         ).forEach { target ->
             target.binaries.all {
                 linkerOpts += "-ld64"
@@ -42,21 +43,21 @@ fun KotlinMultiplatformExtension.native() {
     }
 }
 
-fun KotlinMultiplatformExtension.jsNode() {
-    js {
-        compilations.all {
-            kotlinOptions {
-                moduleKind = "umd"
-                sourceMap = true
-                metaInfo = true
-            }
-        }
-        nodejs {
-            testTask {
-                useMocha {
-                    timeout = "300s"
-                }
-            }
-        }
-    }
-}
+//fun KotlinMultiplatformExtension.jsNode() {
+//    js {
+//        compilations.all {
+//            kotlinOptions {
+//                moduleKind = "umd"
+//                sourceMap = true
+//                metaInfo = true
+//            }
+//        }
+//        nodejs {
+//            testTask {
+//                useMocha {
+//                    timeout = "300s"
+//                }
+//            }
+//        }
+//    }
+//}

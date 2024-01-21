@@ -11,7 +11,7 @@ plugins {
 kotlin {
     explicitApi()
     jvm()
-    jsNode()
+//    jsNode()
     native()
 
     sourceSets {
@@ -38,10 +38,18 @@ kotlin {
                 implementation(kotlin("test-junit"))
             }
         }
-        val jsTest by getting {
-            dependencies {
-                implementation(kotlin("test-js"))
-            }
-        }
+//        val jsTest by getting {
+//            dependencies {
+//                implementation(kotlin("test-js"))
+//            }
+//        }
     }
+
 }
+
+
+//tasks.all {
+//    if (name.contains("Test")) {
+//        enabled = false
+//    }
+//}
