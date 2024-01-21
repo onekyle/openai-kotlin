@@ -12,7 +12,6 @@ import kotlin.time.Duration.Companion.minutes
 
 internal val token: String
     get() = requireNotNull(env("OPENAI_API_KEY")) { "OPENAI_API_KEY environment variable must be set." }
-        //"sk-b672b67813f465e18489d4b046c2f49c"
 
 
 internal val openAIConfig: OpenAIConfig = OpenAIConfig(
