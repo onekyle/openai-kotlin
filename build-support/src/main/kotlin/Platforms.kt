@@ -21,7 +21,7 @@ fun KotlinMultiplatformExtension.native() {
         val darwinTest by creating { dependsOn(nativeTest) }
 
         listOf(
-//            iosX64(),
+            iosX64(),
             iosArm64(),
             iosSimulatorArm64(),
 //            macosX64(),

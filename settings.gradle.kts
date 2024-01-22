@@ -3,7 +3,7 @@ includeBuild("build-support")
 
 include(":openai-core")
 include(":openai-client")
-include(":openai-client-bom")
+//include(":openai-client-bom")
 
 //include(":sample:jvm")
 //include(":sample:js")
@@ -24,4 +24,10 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+//
+//    versionCatalogs {
+//        create("libs") {
+//            from(files("gradle/libs.versions.toml"))
+//        }
+//    }
 }

@@ -26,28 +26,28 @@ subprojects {
         }
     }
 
-    tasks.withType<Test> {
-        testLogging {
-            events(STARTED, PASSED, SKIPPED, FAILED)
-            exceptionFormat = TestExceptionFormat.FULL
-            showStandardStreams = false
-        }
-    }
-
-    tasks.withType<KotlinJvmTest>().configureEach {
-        environment("LIB_ROOT", rootDir)
-    }
-
-    tasks.withType<KotlinNativeTest>().configureEach {
-        environment("SIMCTL_CHILD_LIB_ROOT", rootDir)
-        environment("LIB_ROOT", rootDir)
-    }
-
-    tasks.withType<KotlinJsTest>().configureEach {
-        environment("LIB_ROOT", rootDir.toString())
-    }
+//    tasks.withType<Test> {
+//        testLogging {
+//            events(STARTED, PASSED, SKIPPED, FAILED)
+//            exceptionFormat = TestExceptionFormat.FULL
+//            showStandardStreams = false
+//        }
+//    }
+//
+//    tasks.withType<KotlinJvmTest>().configureEach {
+//        environment("LIB_ROOT", rootDir)
+//    }
+//
+//    tasks.withType<KotlinNativeTest>().configureEach {
+//        environment("SIMCTL_CHILD_LIB_ROOT", rootDir)
+//        environment("LIB_ROOT", rootDir)
+//    }
+//
+//    tasks.withType<KotlinJsTest>().configureEach {
+//        environment("LIB_ROOT", rootDir.toString())
+//    }
 }
 
-tasks.withType<DokkaMultiModuleTask>() {
-    outputDirectory.set(projectDir.resolve("docs"))
-}
+//tasks.withType<DokkaMultiModuleTask>() {
+//    outputDirectory.set(projectDir.resolve("docs"))
+//}
