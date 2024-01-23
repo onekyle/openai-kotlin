@@ -36,6 +36,6 @@ public data class Choice(
      * point or a provided stop sequence, or [FinishReason.Length] if the maximum number of tokens specified in the
      * request was reached.
      */
-    @SerialName("finish_reason")
+    @SerialName("finishReason")
     public val finishReason: FinishReason? = null,
 )

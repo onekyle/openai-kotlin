@@ -1,6 +1,5 @@
 package com.aallam.openai.api.chat;
 
-import com.aallam.openai.api.BetaOpenAI
 import com.aallam.openai.api.core.FinishReason
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -24,5 +23,5 @@ public data class ChatChoice(
     /**
      * The reason why OpenAI stopped generating.
      */
-    @SerialName("finish_reason") public val finishReason: FinishReason? = null,
+    @SerialName("finishReason") public val finishReason: FinishReason? = null,
 )

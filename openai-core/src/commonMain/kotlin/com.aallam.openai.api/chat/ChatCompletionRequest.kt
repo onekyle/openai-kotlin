@@ -173,7 +173,7 @@ public class ChatCompletionRequestBuilder {
     public var messages: List<ChatMessage>? = null
 
 
-    public var character_profile: Map<String, String>? = null
+    public var characterProfile: BCCharacter? = null
     /**
      * What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random,
      * while lower values like 0.2 will make it more focused and deterministic.
@@ -315,6 +315,7 @@ public class ChatCompletionRequestBuilder {
     public fun build(): ChatCompletionRequest = ChatCompletionRequest(
         model = requireNotNull(model) { "model is required" },
         messages = requireNotNull(messages) { "messages is required" },
+        characterProfile = characterProfile,
         temperature = temperature,
         topP = topP,
         n = n,
