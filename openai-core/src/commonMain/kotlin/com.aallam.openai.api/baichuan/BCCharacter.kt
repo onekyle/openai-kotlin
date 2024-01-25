@@ -1,9 +1,5 @@
 package com.aallam.openai.api.baichuan
 
-import com.aallam.openai.api.chat.Content
-import com.aallam.openai.api.chat.FunctionCall
-import com.aallam.openai.api.chat.ToolCall
-import com.aallam.openai.api.chat.ToolId
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -38,6 +34,8 @@ public data class BCCharacter(
      * 角色 id 为空时，用户信息必填
      */
     @SerialName("user_info") public val userInfo: String? = null,
+
+    @SerialName("character_icon") public val characterIcon: String? = null,
 ) {
     @Suppress("FunctionName")
     public companion object {
